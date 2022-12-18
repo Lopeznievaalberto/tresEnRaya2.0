@@ -1,0 +1,51 @@
+
+body{
+    background-color: rgb(243, 148, 148);
+}
+
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#marco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    color: rgb(1, 2, 2);
+    background-color: rgb(243, 148, 148);
+    padding: 3px;
+    font-family:fantasy;
+    font-weight: 800;
+}
+
+#boton{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#a{
+    border-color: black;
+    border-radius: 50%;
+}
+
+#jugar{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#imagen{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    opacity: 0.6;
+}
+
+*, ::after, ::before {
+    box-sizing: content-box; 
+}
