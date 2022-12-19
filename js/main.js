@@ -8,9 +8,17 @@ const jBtn_e = "pointer-events:initial;opacity:initial;",
 let state = false;
 
 
-
-
-
+const entrar = () => {
+    let jugador1 = document.getElementById("nombre").value;
+    let jugador2 = document.getElementById("jugador").value;
+    
+        localStorage.setItem("nombre", jugador1);
+        localStorage.setItem("jugador", jugador2);
+        window.location.href=('../html/index.html');
+        document.getElementById("nombre").value = "";
+        document.getElementById("jugador").value = "";
+    
+}
 
 
 let matrizganadora = [
@@ -104,7 +112,7 @@ empieza();
 
 
 
-
+/*
 
 
 var contador_selecciones = 0;
@@ -136,42 +144,7 @@ function puntaje() {
     }
 }
 
+*/
 
 
 
-
-
-
-
-var nombre = sessionStorage.getItem("nombre");
-var jugador = sessionStorage.getItem("jugador");
-
-
-mostrarnombre = () => {
-    document.write(nombre);
-}
-
-mostrarjugador = () => {
-    document.write(jugador);
-}
-
-
-
-
-
-
-
-
-
-
-/*
-const entrar = () => {
-    Math.floor(Math.random()*2) ? "nombre":"jugador"
-    let jugador1 = document.getElementById("nombre").value;
-    let jugador2 = document.getElementById("jugador").value;
-    if(jugador1&&jugador2){
-         sessionStorage.setItem("nombre", jugador1)
-        sessionStorage.setItem("jugador", jugador2)
-        window.open('../html/index.html');
-    } console.log("Escribe nombre")
-};*/
