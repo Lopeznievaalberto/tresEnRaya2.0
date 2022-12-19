@@ -15,44 +15,47 @@
 
 <body>
 
-    <div class="contenedor-juego">
-        <div class="juego-titulo">
-            <h2>TRES EN RAYA</h2>
-        </div>
-        <p id="juego-info" class="juego-info"></p>
-        <div class="cuadricula">
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-            <div class="cuadrado"></div>
-
+    <div class="container-fluid">
+        <div class="row justify-content-md-center" >
+            <div class="col col-lg-2">
+                <h4>
+                    <script>document.write(localStorage.getItem("nombre"));</script>:
+                </h4>
+            </div>
+            <div class="col col-lg-2">
+                <h4>
+                    <script>document.write(localStorage.getItem("jugador"));</script>:
+                </h4>
+            </div>
         </div>
 
-        <div id="juego-boton" class="juego-boton">Volver a jugar
+
+        <div class="contenedor-juego">
+            <div class="juego-titulo">
+                <h2>TRES EN RAYA</h2>
+            </div>
+            <p id="juego-info" class="juego-info"></p>
+            <div class="cuadricula">
+                <div class="cuadrado"></div>
+                <div class="cuadrado"></div>
+                <div class="cuadrado"></div>
+                <div class="cuadrado"></div>
+                <div class="cuadrado"></div>
+                <div class="cuadrado"></div>
+                <div class="cuadrado"></div>
+                <div class="cuadrado"></div>
+                <div class="cuadrado"></div>
+
+            </div>
+
+            <div id="juego-boton" class="juego-boton">Volver a jugar
+
+            </div>
+
+            <a class="nav-link active" href="/html/eleccionjugador.html">Restart</a>
+
 
         </div>
-
-        <a class="nav-link active" href="/html/eleccionjugador.html">Restart</a>
-
-        <div>
-            jj
-            <h4>
-                <script>document.write(localStorage.getItem("nombre"));</script>
-            </h4>
-        </div>
-        <div>
-            jj
-            <h4>
-                <script>document.write(localStorage.getItem("jugador"));</script>
-            </h4>
-        </div>
-
-  
 
 
 
