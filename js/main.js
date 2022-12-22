@@ -39,7 +39,7 @@ comprobar = () => {
         if (cuadrado_btn[matrizganadora[j][0]].innerHTML === "X" && cuadrado_btn[matrizganadora[j][1]].innerHTML === "X"
             && cuadrado_btn[matrizganadora[j][2]].innerHTML === "X") {
             cabecera.innerHTML = '"X" Gana';
-            state = false;
+            state = true;
             desactivarcasillas();
         } else if (cuadrado_btn[matrizganadora[j][0]].innerHTML === "O" && cuadrado_btn[matrizganadora[j][1]].innerHTML === "O"
             && cuadrado_btn[matrizganadora[j][2]].innerHTML === "O") {
