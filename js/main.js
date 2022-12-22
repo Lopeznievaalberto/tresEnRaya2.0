@@ -1,10 +1,10 @@
 
 const cuadrado_btn = document.querySelectorAll(".cuadrado");
-const info = document.getElementById("juego-info");
-const juego_btn = document.getElementById("juego-boton");
+const cabecera = document.getElementById("cabecera");
+const botondejuego = document.getElementById("botondejuego");
 let i = 1;
-const jBtn_e = "pointer-events:initial;opacity:initial;",
-    jBtn_d = "pointer-events:none;opacity:40%;";
+const eventinitial = "pointer-events:initial;opacity:initial;";
+const   eventoopacity = "pointer-events:none;opacity:40%;";
 let state = false;
 
 
@@ -34,54 +34,55 @@ let matrizganadora = [
 
 
 comprobar = () => {
-    juego_btn.style.cssText = jBtn_d;
+    botondejuego.style.cssText = eventoopacity;
     for (let j = 0; j < matrizganadora.length; j++) {
         if (cuadrado_btn[matrizganadora[j][0]].innerHTML === "X" && cuadrado_btn[matrizganadora[j][1]].innerHTML === "X"
             && cuadrado_btn[matrizganadora[j][2]].innerHTML === "X") {
-            info.innerHTML = '"X" Gana';
-            state = true;
-            deshabilitarCasillas();
+            cabecera.innerHTML = '"X" Gana';
+            state = false;
+            desactivarcasillas();
         } else if (cuadrado_btn[matrizganadora[j][0]].innerHTML === "O" && cuadrado_btn[matrizganadora[j][1]].innerHTML === "O"
             && cuadrado_btn[matrizganadora[j][2]].innerHTML === "O") {
-            info.innerHTML = '"O" Gana';
+            cabecera.innerHTML = '"O" Gana';
             state = true;
-            deshabilitarCasillas();
+            desactivarcasillas();
         }
     }
+
     if (cuadrado_btn[0].innerHTML != "" && cuadrado_btn[1].innerHTML != "" && cuadrado_btn[2].innerHTML != ""
         && cuadrado_btn[3].innerHTML !== "" && cuadrado_btn[4].innerHTML != "" && cuadrado_btn[5].innerHTML != ""
         && cuadrado_btn[6].innerHTML != "" && cuadrado_btn[7].innerHTML != "" && cuadrado_btn[8].innerHTML != ""
         && state == false) {
-        info.innerHTML = "Empate";
-        deshabilitarCasillas(false);
+        cabecera.innerHTML = "Empate";
+        desactivarcasillas(false);
     }
 
 }
 
 /* funcion que va recorriendo las casillas y las deja "marcadas" */
-deshabilitarCasillas = (y) => {
+desactivarcasillas = (y) => {
     (y == false) ? i = Math.floor(Math.random() * (3 - 1)) + 1 : 0;
-    for (let n_boton = 0; n_boton < cuadrado_btn.length; n_boton++) {
+            for (let n_boton = 0; n_boton < cuadrado_btn.length; n_boton++) {
         cuadrado_btn[n_boton].style.setProperty("pointer-events", "none");
     }
-    juego_btn.style.cssText = jBtn_e;
+    botondejuego.style.cssText = eventinitial;
 }
 
 
-empieza = () => {
-    juego_btn.style.cssText = jBtn_d;
+empezar = () => {
+    botondejuego.style.cssText = eventoopacity;
     let c1;
     (i % 2 == 0) ? c1 = "X" : c1 = "O";
-    info.innerHTML = `Presione cualquier cuadrado para iniciar: <b>"${c1}"</b> empieza.`;
+    cabecera.innerHTML = `Presione cualquier cuadrado para iniciar: <b>"${c1}"</b> empezar.`;
 }
 
 /* bucle forEach que recorre la matriz cuadrado_btn y establece el evento onclick de cada elemento
-a una función que establece el inner del elemento de información, establece el HTML interno de
+a una función que establece el inner del elemento de cabecerarmación, establece el HTML interno de
 el elemento actual a "X" u "O" dependiendo del valor de i, llamando a la función comprobar, establece
 la propiedad pointer-events del elemento actual hasta "none"(ninguno)*/
 cuadrado_btn.forEach(boton => {
     boton.onclick = () => {
-        info.innerHTML = "";
+        cabecera.innerHTML = "";
         (i % 2 == 0) ? boton.innerHTML = "X" : boton.innerHTML = "O";
         comprobar();
         boton.style.setProperty("pointer-events", "none");
@@ -90,21 +91,21 @@ cuadrado_btn.forEach(boton => {
     }
 });
 
-/* Establece el evento onclick del elemento juego_btn en una función que establece los eventos de puntero
+/* Establece el evento onclick del elemento botondejuego en una función que establece los eventos de puntero
 de cada elemento en la matriz cuadrado_btn hasta "initial", estp hace que innerHTML sea "rellenado"
 establece el HTML interno de cada elemento
 en la matriz cuadrado_btn a una cadena vacía, establece la variable de estado en falso y llama al
-Función nEmpieza. */
-juego_btn.onclick = () => {
+Función nempezar. */
+botondejuego.onclick = () => {
     for (let n_boton = 0; n_boton < cuadrado_btn.length; n_boton++) {
         cuadrado_btn[n_boton].style.cssText = "pointer-events:initial;";
         cuadrado_btn[n_boton].innerHTML = "";
         state = false;
     }
-    empieza();
+    empezar();
 }
 
-empieza();
+empezar();
 
 
 

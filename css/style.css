@@ -33,7 +33,7 @@ body{
     box-sizing: border-box;
 }
 
-.contenedor-juego{
+.cuadradocontenedor{
     height:100vh;
     max-width: 1250px;
     display: flex;
@@ -45,20 +45,20 @@ body{
 
 }
 
-.juego-titulo, .juego-info{
+.titulotresenraya, .cabecera{
     text-align: center;
 }
 
 
 
 
-.cuadro:hover{
+.cuadrado:hover{
    
     background-color:#cccc;
     
 }
 
-.juego-boton{
+.botondejuego{
     display:inline-flex;
     padding: 1rem 1rem;
     background:red ;
@@ -70,7 +70,7 @@ body{
    
 }
 
-.juego-boton:hover{
+.botondejuego:hover{
   
     background:white ;
     color: red;
