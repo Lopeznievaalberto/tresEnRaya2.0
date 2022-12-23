@@ -6,9 +6,7 @@ body{
     text-align: center;
 }
 
-
 .cuadricula{
-   
     display: grid;
     grid-template-columns: auto auto auto;
     gap:0; /*espacio entre los cuadrados*/
@@ -42,7 +40,6 @@ body{
     align-items: center;
     gap:1rem;
     text-align: center;
-
 }
 
 .titulotresenraya, .cabecera{
@@ -50,12 +47,8 @@ body{
 }
 
 
-
-
 .cuadrado:hover{
-   
     background-color:#cccc;
-    
 }
 
 .botondejuego{
@@ -67,15 +60,12 @@ body{
     justify-content: center;
     font-weight: bold;
     transition:color ease-out 0.3s; /*transición suave del icono a mas pequeño */
-   
 }
 
-.botondejuego:hover{
-  
+.botondejuego:hover{ 
     background:white ;
     color: red;
-    border: 1px solid red;
-   
+    border: 1px solid red; 
 }
 
 

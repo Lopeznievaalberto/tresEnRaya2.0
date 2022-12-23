@@ -11,15 +11,12 @@ let state = false;
 const entrar = () => {
     let jugador1 = document.getElementById("nombre").value;
     let jugador2 = document.getElementById("jugador").value;
-    
-        localStorage.setItem("nombre", jugador1);
-        localStorage.setItem("jugador", jugador2);
-        window.location.href=('../html/index.html');
-        document.getElementById("nombre").value = "";
-        document.getElementById("jugador").value = "";
-    
+    localStorage.setItem("nombre", jugador1);
+    localStorage.setItem("jugador", jugador2);
+    window.location.href=('../html/index.html');
+    document.getElementById("nombre").value = "";
+    document.getElementById("jugador").value = "";  
 }
-
 
 let matrizganadora = [
     [0, 1, 2],
@@ -32,17 +29,16 @@ let matrizganadora = [
     [2, 4, 6],
 ];
 
-
 comprobar = () => {
     botondejuego.style.cssText = eventoopacity;
-    for (let j = 0; j < matrizganadora.length; j++) {
-        if (cuadrado_btn[matrizganadora[j][0]].innerHTML === "X" && cuadrado_btn[matrizganadora[j][1]].innerHTML === "X"
-            && cuadrado_btn[matrizganadora[j][2]].innerHTML === "X") {
+    for (let m = 0; m < matrizganadora.length; m++) {
+        if (cuadrado_btn[matrizganadora[m][0]].innerHTML === "X" && cuadrado_btn[matrizganadora[m][1]].innerHTML === "X"
+            && cuadrado_btn[matrizganadora[m][2]].innerHTML === "X") {
             cabecera.innerHTML = '"X" Gana';
             state = true;
             desactivarcasillas();
-        } else if (cuadrado_btn[matrizganadora[j][0]].innerHTML === "O" && cuadrado_btn[matrizganadora[j][1]].innerHTML === "O"
-            && cuadrado_btn[matrizganadora[j][2]].innerHTML === "O") {
+        } else if (cuadrado_btn[matrizganadora[m][0]].innerHTML === "O" && cuadrado_btn[matrizganadora[m][1]].innerHTML === "O"
+            && cuadrado_btn[matrizganadora[m][2]].innerHTML === "O") {
             cabecera.innerHTML = '"O" Gana';
             state = true;
             desactivarcasillas();
@@ -60,14 +56,13 @@ comprobar = () => {
 }
 
 /* funcion que va recorriendo las casillas y las deja "marcadas" */
-desactivarcasillas = (y) => {
-    (y == false) ? i = Math.floor(Math.random() * (3 - 1)) + 1 : 0;
-            for (let n_boton = 0; n_boton < cuadrado_btn.length; n_boton++) {
-        cuadrado_btn[n_boton].style.setProperty("pointer-events", "none");
+desactivarcasillas = (d) => {
+    (d == false) ? i = Math.floor(Math.random() * (3 - 1)) + 1 : 0;
+            for (let actionboton = 0; actionboton < cuadrado_btn.length; actionboton++) {
+        cuadrado_btn[actionboton].style.setProperty("pointer-events", "none");
     }
     botondejuego.style.cssText = eventinitial;
 }
-
 
 empezar = () => {
     botondejuego.style.cssText = eventoopacity;
@@ -97,55 +92,16 @@ establece el HTML interno de cada elemento
 en la matriz cuadrado_btn a una cadena vacía, establece la variable de estado en falso y llama al
 Función nempezar. */
 botondejuego.onclick = () => {
-    for (let n_boton = 0; n_boton < cuadrado_btn.length; n_boton++) {
-        cuadrado_btn[n_boton].style.cssText = "pointer-events:initial;";
-        cuadrado_btn[n_boton].innerHTML = "";
+    for (let actionboton = 0; actionboton < cuadrado_btn.length; actionboton++) {
+        cuadrado_btn[actionboton].style.cssText = "pointer-events:initial;";
+        cuadrado_btn[actionboton].innerHTML = "";
         state = false;
     }
     empezar();
 }
-
 empezar();
 
 
-
-
-
-
-
-/*
-
-
-var contador_selecciones = 0;
-var ganador = 0; //0 1 2 3
-var score1 = 0;
-var score2 = 0;
-
-function puntaje() {
-    if (ganador === 1) {
-        score1 += 1;
-        winPlayer1 = (score1) => {
-            for (var i = 1; i < 10; i++) {
-                let string = "button_active" + i;
-                document.getElementById(string).disabled = true
-            };
-        };
-        contador_selecciones = 0;
-    } else if (ganador === 2) {
-        score2 += 1;
-        winPlayer2 = (score2) => {
-            for (var i = 1; i < 10; i++) {
-                let string = "button_active" + i;
-                document.getElementById(string).disabled = true;
-            }
-        };
-        contador_selecciones = 0;
-    } else if (ganador === 3) {
-        contador_selecciones = 0;
-    }
-}
-
-*/
 
 
 
