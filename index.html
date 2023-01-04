@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,65 +9,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="/css/styleeleccio.css">
+ 
 
     <title>Document</title>
 </head>
 
 <body>
-
     <div class="container-fluid">
-        <div class="row justify-content-md-center" >
-            <div class="col col-lg-2">
-                <h4>
-                    <script>document.write(localStorage.getItem("nombre"));</script>:
-                </h4>
-            </div>
-            <div class="col col-lg-2">
-                <h4>
-                    <script>document.write(localStorage.getItem("jugador"));</script>:
-                </h4>
+        <div class="row" class="col-12 d-flex justify-content-center align-items-center">
+            <div >
+                <div id="boton" class="col-12 d-flex justify-content-center align-items-center">
+                    <label for="nombre"><u> Pon nombres:</u>
+                        <div >
+                            <input type="text" id="nombre" name="nombre" />
+                        </div>
+                        <div >
+                            <input type="text" id="jugador" name="jugador" />
+                        </div>
+                      
+                        
+                    </label>
+                     <input id="jugar" type="button" value="jugar"
+                        onclick="entrar()" />
+                    <div id="a"><a class="nav-link active" href="/index.html">Restart</a></div>
+                </div>
             </div>
         </div>
+       
+    </div><br><br><br>
+    <div id="imagen"><img src="/img/descarga.png" alt=""></div>
 
 
-        <div class="cuadradocontenedor">
-            <div class="titulotresenraya">
-                <h2>TRES EN RAYA</h2>
-            </div>
-            <p id="cabecera" class="cabecera"></p>
-            <div class="cuadricula">
-                <div class="cuadrado"></div>
-                <div class="cuadrado"></div>
-                <div class="cuadrado"></div>
-                <div class="cuadrado"></div>
-                <div class="cuadrado"></div>
-                <div class="cuadrado"></div>
-                <div class="cuadrado"></div>
-                <div class="cuadrado"></div>
-                <div class="cuadrado"></div>
 
-            </div>
-
-            <div id="botondejuego" class="botondejuego">Volver a jugar
-
-            </div>
-
-            <a class="nav-link active" href="/html/eleccionjugador.html">Restart</a>
-
-
-        </div>
-
-
-control de prueba github
-
-
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script src="/js/main.js"></script>
 </body>
- 
+
 </html>
