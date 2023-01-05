@@ -1,0 +1,29 @@
+
+body{
+    background-color: rgb(243, 148, 148);
+}
+
+
+#botondecomenzar{
+    display:inline-flex;
+    padding: 1rem 1rem;
+    background:red ;
+    color: white;
+    cursor: pointer;
+    justify-content: center;
+    font-weight: bold;
+    transition:color ease-out 0.3s; /*transición suave del icono a mas pequeño */
+}
+
+#botondecomenzar:hover{ 
+    background:white ;
+    color: red;
+    border: 1px solid red; 
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
